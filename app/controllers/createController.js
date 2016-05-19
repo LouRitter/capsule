@@ -6,12 +6,14 @@ var passport = require('passport')
 module.exports.createPost = function(req, res) {
 
 
+console.log("THIS IS GETTING HIT");
+  
+
   var url = req.body.url
-  var userId = res
-  console.log("USER ID:" + userId);
+
   var newPost= {
+    userId: 1,
   	url: url,
-  	userId: userId
   }
   
   Model.Post.create(newPost).then(function() {

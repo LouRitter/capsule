@@ -42,5 +42,6 @@ var posts = {
 
 }
 
-module.exports.attributes = attributes
-module.exports.options = options
+module.exports.attributes = attributes;
+module.exports.posts = posts;
+module.exports.options = options;

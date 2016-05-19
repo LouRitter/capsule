@@ -1,8 +1,8 @@
 var UserMeta = require('./User.js'),
     connection = require('../sequelize.js')
 
-var User = connection.define('accounts', UserMeta.attributes, UserMeta.options)
-var Post = connection.define('posts', UserMeta.createPost, UserMeta.options)
+var User = connection.define('accounts1', UserMeta.attributes, UserMeta.options)
+var Post = connection.define('posts2', UserMeta.posts, UserMeta.options)
 // you can define relationships here
 
 Post.sync();
