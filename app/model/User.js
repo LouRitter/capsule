@@ -37,7 +37,7 @@ var options = {
 }
 
 var posts = {
-  userId: Sequelize.INTEGER,
+  username: Sequelize.STRING,
   url: Sequelize.STRING
 
 }

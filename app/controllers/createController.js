@@ -1,18 +1,12 @@
 var Model = require('../model/models.js')
-
-
 var passport = require('passport')
 
 module.exports.createPost = function(req, res) {
-
-
-console.log("THIS IS GETTING HIT");
   
-
   var url = req.body.url
 
   var newPost= {
-    userId: 1,
+    username: req.user.dataValues.username,
   	url: url,
   }
   

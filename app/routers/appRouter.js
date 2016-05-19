@@ -15,20 +15,27 @@ module.exports = function(express) {
   router.get('/signup', signupController.show)
   router.post('/signup', signupController.signup)
   router.post('/create', createController.createPost)
-  router.post('/login', passport.authenticate('local', {
-      successRedirect: '/dashboard',
-      failureRedirect: '/',
-      failureFlash: true 
-  }))
+
+
+  router.post('/login', 
+    passport.authenticate('local', { failureRedirect: '/login' }),
+    function(req, res, next) {
+
+      res.redirect('/dashboard/')
+    });
+
 
   router.get('/', function(req, res) {
     res.render('home')
   })
 
-  router.get('/dashboard', isAuthenticated, function(req, res) {
+  router.get('/dashboard/', isAuthenticated, function(req, res) {
+
+    console.log(req.user);
+
     res.sendFile(path.join(__dirname + '/../../views/dashboard.html'));
   })
-  router.get('/create',isAuthenticated,function(req,res) {
+  router.get('/create/',isAuthenticated,function(req,res) {
     res.sendFile(path.join(__dirname + '/../../views/create.html'));
     // console.log(passport.session);
   
