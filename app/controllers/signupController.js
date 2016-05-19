@@ -1,5 +1,4 @@
-
-    Model = require('../model/models.js')
+  var  Model = require('../model/models.js')
 
 module.exports.show = function(req, res) {
   res.render('signup')
@@ -40,9 +39,10 @@ module.exports.signup = function(req, res) {
   
   Model.User.create(newUser).then(function() {
     res.redirect('/')
+
   }).catch(function(error) {
     req.flash('error', "Please, choose a different username.")
-    console.log(error);
+    console.log("ERROR"+ error);
     res.redirect('/signup')
   })
 }

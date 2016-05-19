@@ -44,6 +44,7 @@ module.exports = function(app) {
       }
       
       done(null, user)
+      console.log(user.dataValues.id);
     })
   })
 }
