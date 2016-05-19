@@ -1,0 +1,33 @@
+{{#section 'head'}}
+    <link rel="stylesheet" href="/styles/auth.css">
+{{/section}}
+
+<div class="container">
+  <form method="POST" action="/signup" class="form-signin">
+    <h2 class="form-signin-heading">Create an account</h2>
+    
+    {{#if errorMessage}}
+      <div class="alert alert-danger">
+        {{errorMessage}}
+      </div>
+    {{/if}}
+    <label for="inputFirstName" class="sr-only">First Name</label>
+    <input type="text" id="inputFirstName" name="firstName" class="form-control" placeholder="firstName" required>   
+    <label for="inputLastName" class="sr-only">Last Name</label>
+    <input type="text" id="inputLastName" name="lastName" class="form-control" placeholder="lastName" required>   
+    <label for="inputEmail" class="sr-only">Email</label>
+    <input type="text" id="inputEmail" name="email" class="form-control" placeholder="Email" required autofocus>
+    <label for="inputUsername" class="sr-only">Username</label>
+    <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+    <label for="inputPassword" class="sr-only">Repeat Password</label>
+    <input type="password" id="inputPassword2" name="password2" class="form-control" placeholder="Repeat Password" required>
+    <label for="inputAge" class="sr-only">Age</label>
+    <input type="text" id="inputAge" name="age" class="form-control" placeholder="age" required autofocus>
+    <label for="inputGender" class="sr-only">Gender</label>
+    <input type="text" id="Gender" name="gender" class="form-control" placeholder="gender" required>
+    <label for="inputFirstName" class="sr-only">Repeat Password</label>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+  </form>
+</div>
