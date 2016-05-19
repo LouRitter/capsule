@@ -36,6 +36,11 @@ var options = {
   freezeTableName: true
 }
 
+var posts = {
+  userId: Sequelize.INTEGER,
+  url: Sequelize.STRING
+
+}
 
 module.exports.attributes = attributes
 module.exports.options = options

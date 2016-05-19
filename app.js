@@ -10,6 +10,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     jsonParser = bodyParser.json()
+    path = require('path')
 
 var port = process.env.PORT || 8080
 

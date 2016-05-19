@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+  <link rel="stylesheet" href="/styles/app.css">
+  
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/dashboard">Example app</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="logout-link" href="/logout">Logout</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+     <br>
+      <h1 class="page-header">Create Post</h1>
+      <label for="createPost" class="sr-only">Insert Image Link</label>
+    	<input type="text" id="createPost"  class="form-control" placeholder="Insert image link" required autofocus>
+    	<br>
+      	<p><a class="btn btn-primary btn-lg" id="createButton" style="margin-left: 10px; width:300px;">Create Post</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</html>
+<script type="text/javascript">
+
+
+		$("#createButton").on("click", function(){
+		var url=$('#createPost').val();
+		console.log(url);
+		
+		var newPost = {
+			url: url
+			
+		};
+		console.log(newPost);
+
+		
+		var currentURL = window.location.origin;
+
+	    $.post(currentURL + "/create", newPost,
+	    function(data){
+	    	console.log(data);
+
+	    });
+
+
+
+			return false;
+
+		});	
+</script>

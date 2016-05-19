@@ -31,5 +31,4 @@ var sequelize = new Sequelize(selectedSource.database, selectedSource.user, sele
     idle: 10000
   },
 });
-console.log(sequelize);
 module.exports = sequelize;
