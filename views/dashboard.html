@@ -20,7 +20,7 @@
         <li><a id="logout-link" href="/logout">Logout</a></li>
       </ul>
       <form class="navbar-form navbar-right">
-        <input type="text" class="form-control" placeholder="Search...">
+        <a href="/create">Create Post</a>
       </form>
     </div>
   </div>
@@ -31,8 +31,8 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
      <br>
       <h1 class="page-header">Feed</h1>
-      
-      
+      <div class="content">
+      </div>
       </div>
     </div>
   </div>
@@ -44,3 +44,18 @@
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </html>
+<script type="text/javascript">
+
+var currentURL = window.location.origin;
+
+      $.post(currentURL + "/api/posts",
+      function(data){
+        console.log(data);
+        for (var i = 0; i<data.find.fulfillmentValue.length; i++) {
+          $('.content').append('<h3>'+data.find.fulfillmentValue[i].username+'</h3>')
+          $('.content').append('<img src="'+data.find.fulfillmentValue[i].url+'"><br>')
+
+        }
+      });
+
+</script>

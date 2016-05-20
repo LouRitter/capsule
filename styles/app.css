@@ -6,7 +6,10 @@
 body {
   padding-top: 50px;
 }
-
+img{
+  width:50%;
+  height:50%;
+}
 
 /*
  * Global add-ons

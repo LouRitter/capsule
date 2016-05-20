@@ -2,6 +2,7 @@ var path = require('path');
 var passport = require('passport'),
     signupController = require('../controllers/signupController.js')
     createController = require('../controllers/createController.js')
+    find = require('../controllers/allPostController.js')
 module.exports = function(express) {
   var router = express.Router()
 
@@ -11,7 +12,6 @@ module.exports = function(express) {
       req.flash('error', 'You have to be logged in to access the page.')
     res.redirect('/')
   }
-  
   router.get('/signup', signupController.show)
   router.post('/signup', signupController.signup)
   router.post('/create', createController.createPost)
@@ -23,16 +23,17 @@ module.exports = function(express) {
 
       res.redirect('/dashboard/')
     });
-
-
+  router.get('/api/posts', function(req,res){
+   res.json(find);
+  })
+  router.post('/api/posts',function(req,res){
+    res.json(find);
+  })
   router.get('/', function(req, res) {
     res.render('home')
   })
 
-  router.get('/dashboard/', isAuthenticated, function(req, res) {
-
-    console.log(req.user);
-
+  router.get('/dashboard/', isAuthenticated,function(req, res) {
     res.sendFile(path.join(__dirname + '/../../views/dashboard.html'));
   })
   router.get('/create/',isAuthenticated,function(req,res) {
