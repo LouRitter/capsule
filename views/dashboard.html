@@ -47,11 +47,11 @@
 <script type="text/javascript">
 
 var currentURL = window.location.origin;
-
+      
       $.post(currentURL + "/api/posts",
       function(data){
         console.log(data);
-        for (var i = 0; i<data.find.fulfillmentValue.length; i++) {
+       for (var i = data.find.fulfillmentValue.length - 1; i >= 0; i--) {
           $('.content').append('<h3>'+data.find.fulfillmentValue[i].username+'</h3>')
           $('.content').append('<img src="'+data.find.fulfillmentValue[i].url+'"><br>')
 
