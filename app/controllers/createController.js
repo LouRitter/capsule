@@ -2,8 +2,9 @@ var Model = require('../model/models.js')
 var passport = require('passport')
 
 module.exports.createPost = function(req, res) {
-  
-  var url = req.body.url
+  console.log(req.body.content);
+
+  var url = req.body.content;
 
   var newPost= {
     username: req.user.dataValues.username,

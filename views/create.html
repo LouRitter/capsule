@@ -46,10 +46,12 @@
    <h1>Create Post</h1>
             <div class="row">
             <div class="col-md-12 col-lg-12 jumbotron">
-                <form>
-                    <textarea id="edit" name="content"></textarea>
+                <form id="form">
+                    <div id= content>
+                      
+                    </div>
                 </form></br>
-                <button class="btn btn-warning right-padding" id="saveButton">Save</button>
+               <button class="btn btn-warning right-padding" id="saveButton">Save</button>
             </div>
 </div> 
          </div>
@@ -91,33 +93,31 @@
   <script type="text/javascript" src="./js/languages/ro.js"></script>
   <!-- Initialize the editor. -->
   <script>
-      $(function() {
-          $('#edit').froalaEditor()
-      });
   $(function() {
-    $('#myEditor')
+    $('#content')
       .froalaEditor({
+
         // Set the save param.
         saveParam: 'content',
         // Set the save URL.
-        saveURL: 'http://example.com/save',
+        saveURL: window.location.origin+'/create',
         // HTTP request type.
         saveMethod: 'POST',
         // Additional save params.
-        saveParams: {id: 'my_editor'}
-      })
-      .on('froalaEditor.save.before', function (e, editor) {
-        // Before save request is made.
-      })
-      .on('froalaEditor.save.after', function (e, editor, response) {
-        // After successfully save request.
+        saveParams: {id: 'edit'}
       })
       .on('froalaEditor.save.error', function (e, editor, error) {
+        console.log(error)
         // Do something here.
       })
   });
   $('#saveButton').click (function () {
-    $('#myEditor').froalaEditor('save.save')
+    console.log("TEST")
+    $('#content').froalaEditor('save.save')
+    var timer = setTimeout(function() {
+            location.href = "/dashboard"
+        }, 5000);
+
   })
   </script>
 </body>

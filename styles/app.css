@@ -15,10 +15,28 @@ body {
 img{
   width:50%;
   height:50%;
+
 }
 body{
   background-color: #80dfff;
 }
+
+.fr-dib .fr-draggable .fr-rounded .fr-bordered {
+  z-index: 5;
+}
+
+
+#posted{
+  padding: 10px;
+  background-color: #FFFFFF;
+  height:500px;
+
+
+  width: 800px;
+  border-radius: 10px;
+
+}
+
 #frontLogo{
   margin-top: 10px;
   margin-bottom: 0px;
