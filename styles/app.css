@@ -5,12 +5,34 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+#logo{
+  width: 100px;
+  height:35px;
+  padding-bottom: 5px;
 }
 img{
   width:50%;
   height:50%;
 }
+body{
+  background-color: #80dfff;
+}
+#frontLogo{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 10px;
+  margin-left: 430px;
+  top: 0px;
+  height:100px;
+  width:300px;
+ };
 
+}
+#dash{
+  margin-top: 15px;
+}
 /*
  * Global add-ons
  */

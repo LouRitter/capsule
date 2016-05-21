@@ -4,8 +4,8 @@
   <title></title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  
-  <link rel="stylesheet" href="/styles/app.css">
+  <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../styles/app.css">
   
 </head>
 <body>
@@ -13,7 +13,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/dashboard">Example app</a>
+      <a class="navbar-brand" href="/dashboard"><img id ="logo" src="pastiche2.png"></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -53,7 +53,10 @@ var currentURL = window.location.origin;
         console.log(data);
        for (var i = data.find.fulfillmentValue.length - 1; i >= 0; i--) {
           $('.content').append('<h3>'+data.find.fulfillmentValue[i].username+'</h3>')
+          $('.content').append('<p>'+data.find.fulfillmentValue[i].createdAt)
           $('.content').append('<img src="'+data.find.fulfillmentValue[i].url+'"><br>')
+
+
 
         }
       });
