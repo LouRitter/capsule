@@ -36,6 +36,10 @@ body{
 /*
  * Global add-ons
  */
+.fr-basic .fr-element{
+  min-height:none !important;
+  height: 400px;
+}
 
 .sub-header {
   padding-bottom: 10px;

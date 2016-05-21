@@ -17,6 +17,7 @@ var port = process.env.PORT || 8080
 app.use(cookieParser())
 app.use(session({ secret: '4564f6s4fdsfdfd', resave: false, saveUninitialized: false }))
 app.use(express.static('views/images'))
+app.use(express.static('views/froala-editor'))
 app.use('/styles', express.static(__dirname + '/styles'))
 
 app.use(flash())
