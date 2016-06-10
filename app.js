@@ -12,7 +12,7 @@ var express = require('express'),
     jsonParser = bodyParser.json()
     path = require('path')
 
-var port = process.env.PORT || 8080
+var port = process.env.PORT || 80;
 
 app.use(cookieParser())
 app.use(session({ secret: '4564f6s4fdsfdfd', resave: false, saveUninitialized: false }))
@@ -38,5 +38,3 @@ app.use('/', appRouter)
 // start app
 app.listen(port)
 console.log('Server started on port ' + port)
-
-module.exports.getApp = app
