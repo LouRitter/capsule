@@ -4,6 +4,9 @@
   "description": "",
   "main": "./app.js",
   "author": "Lou Ritter and Jorge Rivera",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "body-parser": "~1.13.3",
     "connect-flash": "~0.1.1",
