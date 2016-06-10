@@ -1,9 +1,9 @@
 {
-  "name": "auth-quickstart",
+  "name": "pastiche",
   "version": "0.0.1",
   "description": "",
-  "main": "app.js",
-  "author": "Petr Stribny",
+  "main": "./app.js",
+  "author": "Lou Ritter and Jorge Rivera",
   "dependencies": {
     "body-parser": "~1.13.3",
     "connect-flash": "~0.1.1",
