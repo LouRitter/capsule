@@ -30,7 +30,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/dashboard"><img id ="logo" src="pastiche2.png"></a>
+      <a class="navbar-brand" href="/dashboard"><img id ="createLogo" src="pastiche2.png"></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -96,7 +96,7 @@
   $(function() {
     $('#content')
       .froalaEditor({
-
+        saveInterval:0,  
         // Set the save param.
         saveParam: 'content',
         // Set the save URL.
@@ -116,7 +116,7 @@
     $('#content').froalaEditor('save.save')
     var timer = setTimeout(function() {
             location.href = "/dashboard"
-        }, 5000);
+        },7000);
 
   })
   </script>

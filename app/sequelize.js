@@ -2,13 +2,6 @@ var mysql = require('mysql');
 var Sequelize = require("sequelize");
 
 var source ={
-     localhost:{
-        port: 3306,
-        host: 'localhost',
-        user: 'root',
-        password: "Eliza1220",
-        database: "friends"
-    }, 
      jawsDB:{
         port:3306,
         host:   'l9dwvv6j64hlhpul.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
